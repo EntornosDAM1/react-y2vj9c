@@ -1,54 +1,66 @@
 import React from 'react';
-
-import './componente-lista.css';
+import ComponenteListaClase from './ComponenteListaClase';
 
 class ListaClase extends React.Component {
-
   constructor(props) {
     super(props);
+    this.titulo = props.titulo;
+    this.icono = props.icono;
     this.state = {
-      done: props.done
+      listaComponentes: this.initList(props.elementos),
     };
-    this.prioridad = props.prioridad;
-    this.texto = props.texto;
+    this.valorTextInput = React.createRef();
+    this.valorPrioritySelect = React.createRef();
   }
 
-  setElementClass() {
-    this.claseLista = this.prioridad;
-    if (this.state.done) {
-      this.claseLista += ' el-done';
-    } else {
-      this.claseLista += ' el-undone';
+  initList(elementos) {
+    const listaInicial = [];
+    for (let i = 0; i < elementos.length; i++) {
+      listaInicial.push(
+        <ComponenteListaClase
+          done={elementos[i].done}
+          texto={elementos[i].texto}
+          prioridad={elementos[i].prioridad}
+        />
+      );
     }
+    return listaInicial;
   }
 
-  setPriority(prioridad){
-      this.prioridad=prioridad;
+  addElement() {
+    const newLista = this.state.listaComponentes.concat(
+      <ComponenteListaClase
+        texto={this.valorTextInput.current.value}
+        prioridad={this.valorPrioritySelect.current.value}
+      />
+    );
+    this.setState({ listaComponentes: newLista });
   }
-
-  setText(texto){
-    this.texto=props.texto;
-  }
-  
-  changeStatus() {
-    this.setState({done: !this.state.done});
-  }
-
 
   render() {
-    this.setElementClass();
     return (
-      <li className={this.claseLista}>
-        <input type="checkbox" defaultChecked={this.state.done} onChange={this.changeStatus.bind(this)} />
-        {this.texto}
-      </li>
+      <div>
+        {this.titulo} - {this.icono}
+        <ul>
+          {this.state.listaComponentes}
+          <li>
+            <input
+              ref={this.valorTextInput}
+              type="text"
+              placeholder="Introduce una tarea"
+            />
+            <br />
+            <select ref={this.valorPrioritySelect}>
+              <option value="alta">Prioridad Alta</option>
+              <option value="media">Prioridad Media</option>
+              <option value="baja">Prioridad Baja</option>
+            </select>
+            <button onClick={this.addElement.bind(this)}>Añadir</button>
+          </li>
+        </ul>
+      </div>
     );
   }
 }
-export default ComponenteListaClase;
-ComponenteListaClase.defaultProps = {
-  prioridad: 'baja',
-  done:false,
-};
 
-export default ComponenteListaClase;
+export default ListaClase;
