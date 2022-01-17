@@ -17,11 +17,11 @@ class BootStrapHeader extends React.Component {
             className="logo-image"
             src="https://eu01.edcwb.com/buscador/img/centros/logogrande/7348-a9c730d6b2b644f5b9910364ba6af277.jpg"
           />
-          <i className="fas fa-user-graduate"/>
+          <i className="fas fa-user-graduate" style={{color: "white"}}/>
 
       <Navbar.Brand as={Link} to="#home">React-Bootstrap</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-dark-example" />
-      <Navbar.Collapse id="navbar-dark-example" className="justify-content-center" >
+      <Navbar.Collapse id="navbar-dark-example" className="justify-content-end">
         <Nav>
           <NavDropdown id="nav-dropdown-dark-example" title="Menu" menuVariant="dark">
             {MenuItems.map((item)=>{
