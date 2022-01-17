@@ -20,8 +20,8 @@ class BootStrapHeader extends React.Component {
 
       <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-dark-example" />
-      <Navbar.Collapse id="navbar-dark-example" >
-        <Nav className="justify-content-end">
+      <Navbar.Collapse id="navbar-dark-example" className="justify-content-center" >
+        <Nav>
           <NavDropdown id="nav-dropdown-dark-example" title="Menu" menuVariant="dark">
             {MenuItems.map((item)=>{
                   return <NavDropdown.Item as={Link} to={item.path}>{item.title}</NavDropdown.Item>
