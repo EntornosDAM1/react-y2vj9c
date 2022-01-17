@@ -10,15 +10,16 @@ class BootStrapHeader extends React.Component {
   }
 
   render(){
-    return <Navbar variant="dark" bg="dark" expand="lg">
+    return <Navbar variant="dark" bg="white" expand="lg">
     <Container fluid>
-    <img
+ 
+          <img
             className="logo-image"
             src="https://eu01.edcwb.com/buscador/img/centros/logogrande/7348-a9c730d6b2b644f5b9910364ba6af277.jpg"
           />
-          <i className="fas fa-user-graduate" />
+          <i className="fas fa-user-graduate"/>
 
-      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Brand as={Link} to="#home">React-Bootstrap</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-dark-example" />
       <Navbar.Collapse id="navbar-dark-example" className="justify-content-center" >
         <Nav>
