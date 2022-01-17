@@ -10,7 +10,7 @@ class BootStrapHeader extends React.Component {
   }
 
   render(){
-    return <Navbar variant="dark" bg="white" expand="lg">
+    return <Navbar variant="dark" bg="dark" expand="lg">
     <Container fluid>
  
           <img
