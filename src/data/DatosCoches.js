@@ -23,7 +23,8 @@ export const DatosTablaCoches =[
   matricula: '4321 RTY',
   marca: 'Mitshubishi',
   modelo: 'Evo 7',
-  color: 'Azul'
+  color: 'Azul',
+  imagen :'https://haciendofotos.com/wp-content/uploads/coche-deportivo-lamborgini.png'
 },
 {
   matricula: '8765 PET',

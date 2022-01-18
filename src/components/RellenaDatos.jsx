@@ -1,6 +1,8 @@
 import React from 'react';
 import {Table} from  'react-bootstrap';
+import Container from 'react-bootstrap/esm/Container';
 import {TitulosTablaCoches,DatosTablaCoches} from '../data/DatosCoches';
+import {Card,Button} from 'react-bootstrap';
 
 class RellenaDatos extends React.Component {
   constructor(props) {
@@ -10,7 +12,8 @@ class RellenaDatos extends React.Component {
     return(
       <div>
         <h1>Coches</h1>
-        <Table responsive>
+        <Container>
+        <Table responsive striped>
           <thead>
             <tr>
               <th>{TitulosTablaCoches.id}</th>
@@ -34,9 +37,18 @@ class RellenaDatos extends React.Component {
               )
              }
 
-            
           </tbody>
       </Table>
+      </Container>
+      <Card style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={DatosTablaCoches[2].imagen} />
+  <Card.Body>
+    <Card.Title>{DatosTablaCoches[2].marca}</Card.Title>
+    <Card.Text>
+      Coche con matricula {DatosTablaCoches[2].matricula}
+    </Card.Text>
+  </Card.Body>
+</Card>
       </div>
       )
     
