@@ -20,6 +20,8 @@ class RellenaDatos extends React.Component {
               <th>{TitulosTablaCoches.field1}</th>
               <th>{TitulosTablaCoches.field2}</th>
               <th>{TitulosTablaCoches.field3}</th>
+              <th>{TitulosTablaCoches.field4}</th>
+              <th>{TitulosTablaCoches.field5}</th>
             </tr>
           </thead>
           <tbody>
@@ -31,6 +33,8 @@ class RellenaDatos extends React.Component {
                         <td>{item.marca}</td>
                         <td>{item.modelo}</td>
                         <td>{item.color}</td>
+                        <td><Card.Img variant="top" src={DatosTablaCoches[2].imagen} /></td>
+                        <td>{item.descripcion}</td>
                     </tr>
                   );
                 }
