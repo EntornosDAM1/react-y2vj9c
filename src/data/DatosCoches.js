@@ -1,5 +1,5 @@
 export const TitulosTablaCoches={
-  id: 'matricula',
+  id: 'Matricula',
   field1: 'Marca',
   field2: 'Modelo',
   field3: 'Color'
@@ -11,13 +11,13 @@ export const DatosTablaCoches =[
   matricula: '0000 LOL',
   marca: 'Peugeot',
   modelo: '306',
-  color: 'rojo'
+  color: 'Rojo'
 },
 {
   matricula: '1234 ABC',
   marca: 'Hyundai',
   modelo: 'ix35',
-  color: 'verde'
+  color: 'Verde'
 },
 {
   matricula: '4321 RTY',
