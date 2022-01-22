@@ -14,7 +14,7 @@ export const DatosTablaCoches =[
   marca: 'Peugeot',
   modelo: '306',
   color: 'Rojo',
-  imagen: '',
+  imagen: 'https://haciendofotos.com/wp-content/uploads/coche-deportivo-lamborgini.png',
   descripcion: 'Coche rojo'
 },
 {
@@ -22,7 +22,7 @@ export const DatosTablaCoches =[
   marca: 'Hyundai',
   modelo: 'ix35',
   color: 'Verde',
-  imagen:'',
+  imagen:'https://haciendofotos.com/wp-content/uploads/coche-deportivo-lamborgini.png',
   descripcion: 'Coche verde'
 },
 {
@@ -38,7 +38,7 @@ export const DatosTablaCoches =[
   marca: 'Seat',
   modelo: 'Leon',
   color: 'Amarillo',
-  imagen: '',
+  imagen: 'https://haciendofotos.com/wp-content/uploads/coche-deportivo-lamborgini.png',
   descripcion: 'Coche Amarillo'
 }
 
