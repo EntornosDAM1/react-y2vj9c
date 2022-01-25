@@ -10,11 +10,20 @@ class Home extends React.Component {
       password: '',
     };
     this.login = this.login.bind(this);
+    this.inputUser=React.createRef();
+    this.inputPass=React.createRef();  
   }
 
   login() {
-    this.setState({ user: 'PEPE', password: '1234' });
+    this.setState({ user:this.inputUser.current.value , password: this.inputPass.current.value });
+    localStorage.setItem('user',this.inputUser.current.value);
+    localStorage.setItem('Contraseña',this.inputPass.current.value);
   }
+  componentDidMount(){
+    localStorage.getItem('user',this.inputUser.current.value);
+    localStorage.getItem('Contraseña',this.inputPass.current.value);
+  }
+
   render() {
     if (
       this.state !== null &&
@@ -23,24 +32,24 @@ class Home extends React.Component {
     ) {
       return (
         <div className="main-site">
-          <h1>Bienvenido! {this.user}</h1>
+          <h1>Bienvenido! {this.state.user}</h1>
         </div>
       );
     } else {
       return (
         <div className="main-site">
-          <h1>Bienvenido!</h1>
+          <h1>Bienvenido! {}</h1>
 
           <Container>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Nombre de usuario o email:</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control  type="email" placeholder="Enter email" ref={this.inputUser} />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Contraseña</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control type="password" placeholder="Password"  ref={this.inputPass} />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Redordar" />
@@ -53,6 +62,11 @@ class Home extends React.Component {
         </div>
       );
     }
+    
+  }
+  componentWillUnmount(){
+    localStorage.removeItem('user',this.inputUser.current.value);
+    localStorage.removeItem('Contraseña',this.inputPass.current.value);
   }
 }
 export default Home;
