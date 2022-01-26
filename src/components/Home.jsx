@@ -18,12 +18,24 @@ class Home extends React.Component {
     this.setState({ user:this.inputUser.current.value , password: this.inputPass.current.value });
     localStorage.setItem('user',this.inputUser.current.value);
     localStorage.setItem('Contraseña',this.inputPass.current.value);
-  }
-  componentDidMount(){
-    localStorage.getItem('user',this.inputUser.current.value);
-    localStorage.getItem('Contraseña',this.inputPass.current.value);
+    this.getName();
+    this.getPassword();
   }
 
+  getName(){
+    return this.inputUser.current.value;
+  }
+
+  getPassword(){
+    let namePass=this.inputPass.current.value;
+    return namePass;
+  }
+
+  componentDidMount(){
+    localStorage.getItem('user');
+    localStorage.getItem('Contraseña');
+  }
+  
   render() {
     if (
       this.state !== null &&
@@ -64,9 +76,9 @@ class Home extends React.Component {
     }
     
   }
-  componentWillUnmount(){
-    localStorage.removeItem('user',this.inputUser.current.value);
-    localStorage.removeItem('Contraseña',this.inputPass.current.value);
+  componentWillUnmount() {
+    localStorage.setItem('user', this.state.user);
+    localStorage.setItem('password', this.state.password);
   }
 }
 export default Home;
