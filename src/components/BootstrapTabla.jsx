@@ -3,9 +3,9 @@ import {Table} from  'react-bootstrap';
 import {Usuarios} from '../data/Usuarios';
 import {Table} from  'react-bootstrap';
 import Container from 'react-bootstrap/esm/Container';
-import {TitulosTablaCoches,DatosTablaCoches} from '../data/DatosCoches';
-import {HeaderLibro,DatosLibro} from '../data/BibliotecaMunicipal';
-import { Card, Container, Table, Row, Col } from 'react-bootstrap';
+import {Home} from './Home';
+
+import { Button, Container, Table, Row, Col } from 'react-bootstrap';
 import {Card} from 'react-bootstrap';
 
 
@@ -20,9 +20,9 @@ class BootstrapTabla extends React.Component {
       return num;
   }
 
-  removeLocalStorage() {
-    localStorage.removeItem('user');
-    localStorage.removeItem('Contraseña');
+  deleteLocalStorage() {
+    console.log("Entra en el botón");
+    localStorage.clear();
   }
 
   render(){
@@ -53,7 +53,8 @@ class BootstrapTabla extends React.Component {
       </Row>
     </Container>
 
-    <button onclick={this.removeLocalStorage()}>Cerrar Sesión</button>
+    <Button type="submit" onClick={this.deleteLocalStorage()}>Cerrar Sesión</Button>
+    {console.log("Al botón llega")};
   </div>
 );
   
