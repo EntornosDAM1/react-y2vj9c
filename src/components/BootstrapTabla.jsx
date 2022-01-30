@@ -22,7 +22,8 @@ class BootstrapTabla extends React.Component {
 
   deleteLocalStorage() {
     console.log("Entra en el botón");
-    localStorage.clear();
+    localStorage.removeItem('user');
+    localStorage.removeItem('Contraseña');
   }
 
   render(){
@@ -54,7 +55,7 @@ class BootstrapTabla extends React.Component {
     </Container>
 
     <Button type="submit" onClick={this.deleteLocalStorage()}>Cerrar Sesión</Button>
-    {console.log("Al botón llega")};
+    {console.log("Al botón llega")}
   </div>
 );
   

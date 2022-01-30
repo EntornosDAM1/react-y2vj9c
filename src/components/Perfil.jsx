@@ -15,8 +15,9 @@ export function Perfil() {
   }else{
     return(
       <div>
-        <h1>Error al introducir los datos
-          </h1>
+        <h1>
+          Error al introducir los datos
+        </h1>
       </div>    
     );
   }
