@@ -2,6 +2,7 @@ import  Home  from '../components/Home';
 import { PaginaListas } from '../components/PaginaListas';
 import { Perfil } from '../components/Perfil';
 import RellenaDatos from '../components/RellenaDatos';
+import PelisGhibli from '../components/PelisGhibli';
 
 export const MenuItems = [
   {
@@ -27,6 +28,12 @@ export const MenuItems = [
     path: '/RellenaDatos',
     title: 'RellenaDatos',
     component: RellenaDatos,
+  },
+  {
+    id: 5,
+    path: '/PelisGhibli',
+    title: 'PelisGhibli',
+    component: PelisGhibli,
   },
 
 ];

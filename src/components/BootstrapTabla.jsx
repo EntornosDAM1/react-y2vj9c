@@ -55,7 +55,6 @@ class BootstrapTabla extends React.Component {
     </Container>
 
     <Button type="submit" onClick={this.deleteLocalStorage()}>Cerrar Sesión</Button>
-    {console.log("Al botón llega")}
   </div>
 );
   
