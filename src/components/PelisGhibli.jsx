@@ -5,6 +5,7 @@ import {TitulosTablaCoches,DatosTablaCoches} from '../data/DatosCoches';
 import {HeaderLibro,DatosLibro} from '../data/BibliotecaMunicipal';
 import { Card, Container, Table, Row, Col } from 'react-bootstrap';
 import {Card} from 'react-bootstrap';
+import CardPeli from './CardPeli';
 
 class PelisGhibli extends React.Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class PelisGhibli extends React.Component {
     const response =await fetch('https://ghibliapi.herokuapp.com/films');
     const responseData = await response.json();
     this.setState({tableData : responseData,
-                    selectItem:responseData[0]
+                    selectedItem:responseData[0]
                   });
   }
 
@@ -67,7 +68,8 @@ class PelisGhibli extends React.Component {
               </Table>
             </Col>
             <Col lg={2} md={6}>
-                  <CardPeli data={this.state.selectItem}/>
+                  <CardPeli data={this.state.selectedItem}/>
+                  {console.log(this.state.selectedItem)};
             </Col>
           </Row>
         </Container>

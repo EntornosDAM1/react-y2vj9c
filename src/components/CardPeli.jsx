@@ -1,37 +1,38 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card,Col } from 'react-bootstrap';
 
-class RellenaDatos extends React.Component {
+
+class CardPeli extends React.Component {
   constructor(props) {
     super(props);
     this.data = props.data;
   }
   render() {
-    if(props.data !=null){
+    if(this.props.data !=null){
       return (
       
         <Col lg={2} md={6}>
           <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={props.data.portada} />
+            <Card.Img variant="top" src={this.props.data.image} />
             <Card.Body>
               <Card.Title>
-                Título
-                <p />
-                {props.data.title}
+                Título:
+               
+                {this.props.data.title}
               </Card.Title>
               <Card.Text>
-                Director
-                {props.data.director}
+                Director: 
+                this.{this.props.data.director}
                 <p />
               </Card.Text>
               <Card.Text>
-                Fecha de salida
-                {props.data.release_date}
+                Fecha de salida:
+                {this.props.data.release_date}
                 <p />
               </Card.Text>
               <Card.Text>
-                Ventas
-                {props.data.rt_score}
+                Ventas:
+                {this.props.data.rt_score}
                 <p />
               </Card.Text>
               <Card.Text>
