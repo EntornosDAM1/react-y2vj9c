@@ -2,7 +2,7 @@ import React from 'react';
 import uuid from 'react-uuid';
 import { Card, Container, Table, Row, Col } from 'react-bootstrap';
 
-import './table.css';
+//import './table.css';
 
 class RugbyTable extends React.Component {
   constructor(props) {

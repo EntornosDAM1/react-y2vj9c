@@ -3,6 +3,7 @@ import { PaginaListas } from '../components/PaginaListas';
 import { Perfil } from '../components/Perfil';
 import RellenaDatos from '../components/RellenaDatos';
 import PelisGhibli from '../components/PelisGhibli';
+import RugbyTable from '../components/RugbyTable';
 
 export const MenuItems = [
   {
@@ -34,6 +35,12 @@ export const MenuItems = [
     path: '/PelisGhibli',
     title: 'PelisGhibli',
     component: PelisGhibli,
+  },
+  {
+    id:6,
+    path:'/RugbyTable',
+    title:'RugbyTable',
+    component: RugbyTable,
   },
 
 ];
