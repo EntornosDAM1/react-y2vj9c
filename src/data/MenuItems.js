@@ -3,7 +3,7 @@ import { PaginaListas } from '../components/PaginaListas';
 import { Perfil } from '../components/Perfil';
 import RellenaDatos from '../components/RellenaDatos';
 import PelisGhibli from '../components/PelisGhibli';
-import RugbyTable from '../components/RugbyTable';
+import NBAPlayers from '../components/NBAPlayers';
 
 export const MenuItems = [
   {
@@ -38,9 +38,9 @@ export const MenuItems = [
   },
   {
     id:6,
-    path:'/RugbyTable',
-    title:'RugbyTable',
-    component: RugbyTable,
+    path:'/NBAPlayers',
+    title:'NBAPlayers',
+    component: NBAPlayers,
   },
 
 ];

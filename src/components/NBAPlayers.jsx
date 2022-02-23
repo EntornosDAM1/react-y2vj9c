@@ -4,47 +4,31 @@ import { Card, Container, Table, Row, Col } from 'react-bootstrap';
 
 //import './table.css';
 
-class RugbyTable extends React.Component {
+class NBAPlayers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedItem: '',
-      selectedCountry: '',
-      selectedArena: '',
       tableData: [],
     };
   }
 
   changeSelected = (item) => {
     this.setState({
-      selectedItem: item,
-      selectedArena: item.arena,
-      selectedCountry: item.country,
+      selectedItem: item
+
     });
   };
 
   async componentDidMount() {
-    var myHeaders = new Headers();
-    myHeaders.append('x-rapidapi-key', '9c61626a1d34b0c21209d76da3e22cb5');
-    myHeaders.append('x-rapidapi-host', 'v1.rugby.api-sports.io');
-
-    var requestOptions = {
-      method: 'GET',
-      headers: myHeaders,
-      redirect: 'follow',
-    };
 
     const response = await fetch(
-      'https://v1.rugby.api-sports.io/teams?league=12&season=2021',
-      requestOptions
+      'https://www.balldontlie.io/api/v1/players'
     );
     const responseData = await response.json();
 
     this.setState({
-      tableData: responseData.response,
-      selectedItem: responseData.response[0],
-      selectedArena: responseData.response[0].arena,
-      selectedCountry: responseData.response[0].country,
+      tableData: responseData.data,
     });
   }
 
@@ -59,6 +43,7 @@ class RugbyTable extends React.Component {
                 <thead>
                   <tr>
                     <th>ID</th>
+                    
                     <th>Nombre del equipo</th>
                     <th>Estadio</th>
                     <th>Fundación</th>
@@ -72,9 +57,9 @@ class RugbyTable extends React.Component {
                         onClick={() => this.changeSelected(item)}
                       >
                         <td>{item.id}</td>
-                        <td>{item.name}</td>
-                        <td>{item.arena.name}</td>
-                        <td>{item.founded}</td>
+                        <td>{item.first_name}</td>
+                        <td>{item.position}</td>
+                        <td>{item.team.city}</td>
                       </tr>
                     );
                   })}
@@ -85,13 +70,13 @@ class RugbyTable extends React.Component {
               <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={this.state.selectedItem.logo} />
                 <Card.Body>
-                  <Card.Title>{this.state.selectedItem.name}</Card.Title>
+                  <Card.Title><h1>{this.state.selectedItem.first_name}</h1></Card.Title>
                   <Card.Text>
-                    Estadio: {this.state.selectedArena.name}
+                    ID: {this.state. selectedItem.id}
                     <p />
-                    Año de fundación: {this.state.selectedItem.founded}
+                    Posición: {this.state.selectedItem.position}
                     <p />
-                    País: {this.state.selectedCountry.name}
+                    Apellido: {this.state.selectedItem.last_name}
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -103,4 +88,4 @@ class RugbyTable extends React.Component {
   }
 }
 
-export default RugbyTable;
+export default NBAPlayers;
